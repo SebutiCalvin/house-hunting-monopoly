@@ -58,7 +58,7 @@ const AddProperty = () => {
         },
         status: form.status,
       };
-      await axios.post('http://localhost:5000/api/properties', data, {
+      await axios.post('https://house-hunting-monopoly.onrender.com/api/properties', data, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success('Property added!');

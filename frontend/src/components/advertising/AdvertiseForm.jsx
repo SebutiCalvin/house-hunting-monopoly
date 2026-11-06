@@ -16,7 +16,7 @@ const AdvertiseForm = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/advertising/submit', form, {
+      await axios.post('https://house-hunting-monopoly.onrender.com/api/advertising/submit', form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success('Request submitted! We will contact you.');

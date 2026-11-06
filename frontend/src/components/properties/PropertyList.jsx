@@ -16,7 +16,7 @@ const PropertyList = () => {
   const fetchProperties = async () => {
     try {
       const params = categoryFromUrl ? { category: categoryFromUrl } : {};
-      const res = await axios.get('http://localhost:5000/api/properties', { params });
+      const res = await axios.get('https://house-hunting-monopoly.onrender.com/api/properties', { params });
       setProperties(res.data.properties || []);
     } catch (err) {
       console.error(err);

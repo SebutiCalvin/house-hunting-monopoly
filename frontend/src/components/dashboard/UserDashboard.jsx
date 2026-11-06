@@ -12,7 +12,7 @@ const UserDashboard = () => {
   const fetchData = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:5000/api/appointments', {
+      const res = await axios.get('https://house-hunting-monopoly.onrender.com/api/appointments', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAppointments(res.data.appointments || []);

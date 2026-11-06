@@ -28,7 +28,7 @@ const AppointmentScheduler = ({ propertyId, property, onClose, onSuccess }) => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/appointments', {
+      await axios.post('https://house-hunting-monopoly.onrender.com/api/appointments', {
         propertyId,
         appointmentDate: format(selectedDate, 'yyyy-MM-dd'),
         startTime: selectedTime,

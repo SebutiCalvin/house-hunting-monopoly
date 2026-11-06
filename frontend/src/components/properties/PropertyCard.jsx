@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PropertyCard = ({ property }) => {
@@ -43,14 +43,14 @@ const PropertyCard = ({ property }) => {
         </div>
         <div className="p-4">
           <h3 className="text-lg font-bold text-gray-800 truncate">{property.title}</h3>
-          <p className="text-gray-600 text-sm">📍 {property.location?.city}, Lesotho</p>
+          <p className="text-gray-600 text-sm">ðŸ“ {property.location?.city}, Lesotho</p>
           <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
-            <span>🛏️ {property.bedrooms || 0} beds</span>
-            <span>🛁 {property.bathrooms || 0} baths</span>
-            <span>👁️ {property.views || 0} views</span>
+            <span>ðŸ›ï¸ {property.bedrooms || 0} beds</span>
+            <span>ðŸ› {property.bathrooms || 0} baths</span>
+            <span>ðŸ‘ï¸ {property.views || 0} views</span>
           </div>
           {property.interestedUsers && property.interestedUsers.length > 0 && (
-            <div className="mt-2 text-sm text-gray-500">❤️ {property.interestedUsers.length} interested</div>
+            <div className="mt-2 text-sm text-gray-500">â¤ï¸ {property.interestedUsers.length} interested</div>
           )}
         </div>
       </div>

@@ -29,7 +29,7 @@ const EditProperty = () => {
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/properties/${id}`);
+        const res = await axios.get(`https://house-hunting-monopoly.onrender.com/api/properties/${id}`);
         const prop = res.data.property;
         setForm({
           title: prop.title || '',
@@ -73,7 +73,7 @@ const EditProperty = () => {
         landlord: { name: form['landlord.name'], phone: form['landlord.phone'], whatsappNumber: form['landlord.phone'] },
         status: form.status,
       };
-      await axios.put(`http://localhost:5000/api/properties/${id}`, data, {
+      await axios.put(`https://house-hunting-monopoly.onrender.com/api/properties/${id}`, data, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success('Updated!');

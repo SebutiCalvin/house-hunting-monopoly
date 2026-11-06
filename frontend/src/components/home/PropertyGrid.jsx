@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -8,7 +8,7 @@ const PropertyGrid = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/properties')
+    axios.get('https://house-hunting-monopoly.onrender.com/api/properties')
       .then(res => setProperties(res.data.properties || []))
       .catch(console.error)
       .finally(() => setLoading(false));
@@ -37,17 +37,17 @@ const PropertyGrid = () => {
                 background: prop.images?.[0]?.url ? 'url(' + prop.images[0].url + ') center/cover' : 'linear-gradient(135deg, #ff6b4a30, #6c6cff30)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '56px',
               }}>
-                {!prop.images?.[0]?.url && '🏠'}
+                {!prop.images?.[0]?.url && 'ðŸ '}
               </div>
               <div style={{ padding: '16px' }}>
                 <h3 style={{ fontWeight: 700, marginBottom: '4px' }}>{prop.title}</h3>
-                <p style={{ color: '#6a6a72', fontSize: '14px' }}>📍 {prop.location?.city || 'Lesotho'}</p>
+                <p style={{ color: '#6a6a72', fontSize: '14px' }}>ðŸ“ {prop.location?.city || 'Lesotho'}</p>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '12px' }}>
                   <span style={{ color: '#ff6b4a', fontWeight: 700, fontSize: '20px' }}>M {prop.price?.toLocaleString()}</span>
                   <span style={{ color: '#9a9aa2', fontSize: '13px' }}>/mo</span>
                 </div>
                 <div style={{ marginTop: '8px', fontSize: '13px', color: '#6a6a72' }}>
-                  🛏️ {prop.bedrooms} · 🛁 {prop.bathrooms} · 👁️ {prop.views || 0}
+                  ðŸ›ï¸ {prop.bedrooms} Â· ðŸ› {prop.bathrooms} Â· ðŸ‘ï¸ {prop.views || 0}
                 </div>
               </div>
             </Link>

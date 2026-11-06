@@ -17,7 +17,7 @@ const PropertyDetail = () => {
 
   const fetchProperty = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/properties/${id}`);
+      const res = await axios.get(`https://house-hunting-monopoly.onrender.com/api/properties/${id}`);
       setProperty(res.data.property);
     } catch (err) {
       toast.error('Property not found');
@@ -30,7 +30,7 @@ const PropertyDetail = () => {
   const handleInterest = async () => {
     if (!user) { toast.info('Please login'); navigate('/login'); return; }
     try {
-      await axios.post(`http://localhost:5000/api/properties/${id}/interest`);
+      await axios.post(`https://house-hunting-monopoly.onrender.com/api/properties/${id}/interest`);
       toast.success('Interest expressed!');
     } catch (err) { toast.error('Failed'); }
   };

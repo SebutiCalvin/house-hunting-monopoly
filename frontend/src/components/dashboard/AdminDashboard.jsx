@@ -20,9 +20,9 @@ const AdminDashboard = () => {
       const headers = { Authorization: `Bearer ${token}` };
 
       const [statsRes, usersRes, propsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/admin/stats', { headers }),
-        axios.get('http://localhost:5000/api/admin/users', { headers }),
-        axios.get('http://localhost:5000/api/properties', { headers }),
+        axios.get('https://house-hunting-monopoly.onrender.com/api/admin/stats', { headers }),
+        axios.get('https://house-hunting-monopoly.onrender.com/api/admin/users', { headers }),
+        axios.get('https://house-hunting-monopoly.onrender.com/api/properties', { headers }),
       ]);
 
       setStats(statsRes.data.stats);
@@ -39,7 +39,7 @@ const AdminDashboard = () => {
   const approveAgent = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/admin/users/${id}/approve`, {}, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.put(`https://house-hunting-monopoly.onrender.com/api/admin/users/${id}/approve`, {}, { headers: { Authorization: `Bearer ${token}` } });
       toast.success('Approved');
       fetchAll();
     } catch { toast.error('Failed'); }
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
   const rejectAgent = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/admin/users/${id}/reject`, {}, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.put(`https://house-hunting-monopoly.onrender.com/api/admin/users/${id}/reject`, {}, { headers: { Authorization: `Bearer ${token}` } });
       toast.success('Rejected');
       fetchAll();
     } catch { toast.error('Failed'); }
@@ -58,7 +58,7 @@ const AdminDashboard = () => {
     if (!window.confirm('Delete this property?')) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/properties/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.delete(`https://house-hunting-monopoly.onrender.com/api/properties/${id}`, { headers: { Authorization: `Bearer ${token}` } });
       toast.success('Deleted');
       fetchAll();
     } catch { toast.error('Failed'); }

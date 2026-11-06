@@ -21,8 +21,8 @@ const AgentDashboard = () => {
       const token = localStorage.getItem('token');
       const headers = { Authorization: `Bearer ${token}` };
       const [propsRes, apptsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/properties/agent', { headers }),
-        axios.get('http://localhost:5000/api/appointments/agent', { headers }),
+        axios.get('https://house-hunting-monopoly.onrender.com/api/properties/agent', { headers }),
+        axios.get('https://house-hunting-monopoly.onrender.com/api/appointments/agent', { headers }),
       ]);
       setProperties(propsRes.data.properties || []);
       setAppointments(apptsRes.data.appointments || []);
@@ -37,7 +37,7 @@ const AgentDashboard = () => {
     if (!window.confirm('Delete?')) return;
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/properties/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.delete(`https://house-hunting-monopoly.onrender.com/api/properties/${id}`, { headers: { Authorization: `Bearer ${token}` } });
       fetchData();
     } catch (err) { console.error(err); }
   };
