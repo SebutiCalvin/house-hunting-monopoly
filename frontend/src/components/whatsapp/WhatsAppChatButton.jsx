@@ -7,14 +7,14 @@ const WhatsAppChatButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [chatMessages, setChatMessages] = useState([
-    { type: 'bot', text: '👋 Hello! Welcome to House Hunting Monopoly. How can we help?' },
+    { type: 'bot', text: 'ðŸ‘‹ Hello! Welcome to House Hunting Monopoly. How can we help?' },
   ]);
 
   const handleSend = () => {
     if (!message.trim()) return;
     setChatMessages([...chatMessages, { type: 'user', text: message }]);
     setTimeout(() => {
-      setChatMessages(prev => [...prev, { type: 'bot', text: '🤖 Thanks! An agent will get back to you shortly. For immediate help, call +26657266136.' }]);
+      setChatMessages(prev => [...prev, { type: 'bot', text: 'ðŸ¤– Thanks! An agent will get back to you shortly. For immediate help, call +26657266136.' }]);
     }, 500);
     setMessage('');
   };
@@ -34,7 +34,7 @@ const WhatsAppChatButton = () => {
             }}
           >
             <div style={{ padding: '16px', background: '#ff6b4a', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: 600 }}>💬 House Hunting Bot</span>
+              <span style={{ fontWeight: 600 }}>ðŸ’¬ House Hunting Bot</span>
               <FiX size={20} style={{ cursor: 'pointer' }} onClick={() => setIsOpen(false)} />
             </div>
             <div style={{ flex: 1, overflowY: 'auto', padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px', background: '#f7fafc' }}>
